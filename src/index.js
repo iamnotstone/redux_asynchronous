@@ -4,8 +4,15 @@ import {createStore} from 'redux'
 import {Provider} from 'react-redux'
 import App from './components/App'
 import reducer from './reducers'
+import {Map} from 'immutable'
 
-const store = createStore(reducer)
+const defaultState = Map({
+	inputContent: "Hello everyone!",
+	outputContent: "I am waiting for you effort!"
+
+})
+
+const store = createStore(reducer, defaultState)
 render(
 	<Provider store={store}>
 		<App />

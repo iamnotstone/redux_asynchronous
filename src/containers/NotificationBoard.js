@@ -1,14 +1,18 @@
 import {connect} from 'react-redux'
 import Notification from '../components/Notification'
+import {inputContentChanged} from '../actions'
 
 
-const mapStateToProps = (state, ownProps) => ({
-	content:"mapStateToProps test"
+const mapStateToProps = (state) => ({
+	content:state.get('inputContent')
 })
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = (dispatch) => ({
 	onClick: () => {
 		console.log("mapDispathToProps test")
+	},
+	onChange:(value) => {
+		dispatch(inputContentChanged(value))
 	}
 })
 

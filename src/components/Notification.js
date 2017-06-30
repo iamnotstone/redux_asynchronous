@@ -1,13 +1,17 @@
 import React from 'react'
 
-const Notification = ({content,onClick}) => (
+const Notification = ({content,onClick,onChange}) => (
 	<div>
-		<textarea rows='4' cols='50'>
-			{content}
+		<textarea value = {content} onChange = {e => {
+			e.preventDefault()
+			onChange(e.target.value)
+		}}>
 		</textarea>
-		<button>
-			Update
-		</button>
+		<div>
+			<button onClick = {onClick}>
+				Update
+			</button>
+		</div>
 
 	</div>
 )

@@ -1,14 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Map} from 'immutable'
 
 const Output = ({content}) => (
 	<div>
-		<textarea row='4' cols='50'> {content} </textarea>
+		<textarea value = {content} onChange = {() => (console.log("Display's content is not mutable by user"))}> </textarea>
 	</div>
 )
 
 const mapStateToProps = (state, ownProps) => ({
-	content:"Dispaly mapStateToProps test"
+	content:state.get('outputContent')
 })
 
 const Display = connect(mapStateToProps)(Output)
