@@ -7,7 +7,7 @@ var del = require('del');
 var runSequence = require('run-sequence');
 
 gulp.task('clean',function(){
-	del(['./dist/*.js','./dist/css/*.css']);
+	del(['src/main/resources/static/js/*','src/main/resources/static/html/*','src/main/resources/static/css/*','src/main/resources/static/image/*']);
 
 });
 
@@ -26,9 +26,9 @@ gulp.task('clean',function(){
 //}) */
 
 gulp.task('transpile',function(){
-	return gulp.src('src/index.js')
+	return gulp.src('./src/main/js/index.js')
 	.pipe(webpack(require('./webpack.config.js')))
-	.pipe(gulp.dest('./dist/'));
+	.pipe(gulp.dest('./src/main/resources/static/js'));
 })
 
 gulp.task('build',function(callback){
