@@ -53,7 +53,9 @@
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
-        <configuration>
+	<configuration>
+	  <url>http://localhost:8081/manager</url>
+	  <port>8081</port>
           <server>myserver</server>
           <path>/mycontext</path>
         </configuration>

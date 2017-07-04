@@ -7,7 +7,7 @@ var del = require('del');
 var runSequence = require('run-sequence');
 
 gulp.task('clean',function(){
-	del(['src/main/resources/static/js/*','src/main/resources/static/html/*','src/main/resources/static/css/*','src/main/resources/static/image/*']);
+	del(['src/main/resources/static/js/*','src/main/resources/static/css/*','src/main/resources/static/image/*']);
 
 });
 

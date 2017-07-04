@@ -12,6 +12,7 @@ public class HelloWorldController {
  
   String helloWorldMessage = "Hello world from java2blog!";
   return new ModelAndView("hello", "message", helloWorldMessage);
+  //return "redirect:/html/index.html";
  }
 }
  
