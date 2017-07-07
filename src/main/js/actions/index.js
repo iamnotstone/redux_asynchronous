@@ -26,10 +26,20 @@ export function fetchPost(content){
 
 	return function (dispatch){
 		dispatch(postContent(content))
-
-		return fetch('')
+		console.log('starting fetch')
+		return fetch('../getMirror',{
+			method: "POST",
+			body:content,
+			headers: {
+   				 "Content-Type": "text/plain;charset=UTF-8"
+ 			 }
+		})
 		.then(
-			response => response.json(),
+			response => {
+				console.log('return response')
+				return response.text()
+				//return "nonon"
+			},
 			error => console.log('Unknown error',error)
 		)
 		.then(

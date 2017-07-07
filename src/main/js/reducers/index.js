@@ -15,6 +15,12 @@ const reducers = (state = defaultInput, action) =>{
 		case 'INPUT_CONTENT_CHANGED':
 			return state.set('inputContent',action.text)
 			//return state
+			break;
+		case 'POST_CONTENT':
+			return state
+			break;
+		case 'RECEIVE_CONTENT':
+			return state.set('outputContent',action.data)
 			break
 		default:
 			return state
