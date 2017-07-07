@@ -8,7 +8,10 @@ const Notification = ({content,onClick,onChange}) => (
 		}}>
 		</textarea>
 		<div>
-			<button onClick = {onClick}>
+			<button onClick = {
+				() =>{ onClick(content)
+				}
+			}>
 				Update
 			</button>
 		</div>

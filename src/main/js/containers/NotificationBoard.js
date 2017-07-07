@@ -1,6 +1,6 @@
 import {connect} from 'react-redux'
 import Notification from '../components/Notification'
-import {inputContentChanged} from '../actions'
+import {inputContentChanged,fetchPost} from '../actions'
 
 
 const mapStateToProps = (state) => ({
@@ -8,8 +8,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-	onClick: () => {
-		console.log("mapDispathToProps test")
+	onClick: (content) => {
+		dispatch(fetchPost(content))
 	},
 	onChange:(value) => {
 		dispatch(inputContentChanged(value))
